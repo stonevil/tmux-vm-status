@@ -33,7 +33,7 @@ vm_status() {
 	if command_exists "/usr/bin/VBoxManage"; then
     VM=$(($VM+`/usr/bin/VBoxManage list runningvms | wc -l`))
 	fi
-  if $VM; then
+  if $VM == ""; then
     VM=0
   fi
 }
