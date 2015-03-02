@@ -7,8 +7,8 @@ source "$CURRENT_DIR/helpers.sh"
 # script global variables
 vm_icon=""
 
-vm_default="VM "
-vm_default_osx="⧉ "
+vm_default="VM"
+vm_default_osx="⧉"
 
 vm_default() {
 	if is_osx; then
