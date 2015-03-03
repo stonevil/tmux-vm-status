@@ -1,11 +1,11 @@
 # Tmux Virtual Machines status
 
-Tmux plugin that displays VMware Fusion / Workstation AND/OR VirtualBox virtual machines status.
+Tmux plugin that show the number of the started VMware Fusion / Workstation AND/OR VirtualBox virtual machines status.
 
 Introduces a new `#{vm_status}` format.
 
 This plugin is useful if:
-- run a lot virtual machines with Vagrant/Packer, etc.
+- run a lot virtual machines with Vagrant/Packer and forget about this.
 
 ### Usage
 
