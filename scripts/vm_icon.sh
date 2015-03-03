@@ -25,6 +25,8 @@ get_icon_settings() {
 
 main() {
 	get_icon_settings
-  printf "$vm_icon"
+	# spacer fixes weird emoji spacing
+	local spacer=" "
+  printf "$vm_icon$spacer"
 }
 main
