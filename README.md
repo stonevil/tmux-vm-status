@@ -60,6 +60,13 @@ Set `status-interval` to a low number to make this faster, example:
     # in .tmux.conf
     set -g status-interval 5
 
+### Other plugins
+
+You might also find these useful:
+
+- [wan-status](https://github.com/stonevil/tmux-wan-status) - WAN status and IP
+- [lan-status](https://github.com/stonevil/tmux-lan-status) - LAN status and IP
+
 ### License
 
 [MIT](LICENSE.md)
