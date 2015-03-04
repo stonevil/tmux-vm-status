@@ -13,11 +13,7 @@ Add `#{vm_icon}` and `#{vm_status}` format string to your existing `status-right
 
 Here's the examples in `.tmux.conf`:
 
-    set -g status-right "Virtual Machines: #{vm_status} | %a %h-%d %H:%M "
-
-OR    
-
-    set -g status-right "#{vm_icon}: #{vm_status} | %a %h-%d %H:%M "
+    set -g status-right "#{vm_status} | %a %h-%d %H:%M "
 
 #### Configure icons
 If the icons don't display well on your machine you can change them in
