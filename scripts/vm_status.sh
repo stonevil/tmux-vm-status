@@ -7,7 +7,7 @@ source "$CURRENT_DIR/helpers.sh"
 vm_option_string="@vm_icon"
 
 vm_icon_osx="⧉ "
-vm_icon="VM "
+vm_icon="VM: "
 
 vm_icon_default() {
 	if is_osx; then
