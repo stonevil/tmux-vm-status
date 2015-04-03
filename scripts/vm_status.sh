@@ -32,7 +32,11 @@ vm_count() {
   fi
 
 	if command_exists "VBoxManage"; then
-    VM=$(($VM+`VBoxManage list runningvms | wc -l`))
+    if [ `VBoxManage list runningvms | grep vboxdrv` ]; then
+      VM="VirtualBox driver not loaded properly"
+    else
+      VM=$(($VM+`VBoxManage list runningvms | wc -l`))
+    fi
 	fi
 
   echo "$VM"
