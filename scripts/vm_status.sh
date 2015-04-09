@@ -23,21 +23,23 @@ vm_count() {
     if [[ -d '/Applications/VMware Fusion.app' ]]; then
       VM=$(($VM+`"/Applications/VMware Fusion.app/Contents/Library/vmrun" -T fusion list | awk 'NR==1{print $4}'`))
     fi
+    if command_exists "VBoxManage"; then
+      VM=$(($VM+`VBoxManage list runningvms | wc -l`))
+    fi
   fi
 
 	if is_linux; then
     if command_exists "vmrun"; then
       VM=$(($VM+`vmrun -T ws list | awk 'NR==1{print $4}'`))
     fi
-  fi
-
-	if command_exists "VBoxManage"; then
-    if [ `VBoxManage list runningvms | grep vboxdrv` ]; then
-      VM="VirtualBox driver not loaded properly"
-    else
-      VM=$(($VM+`VBoxManage list runningvms | wc -l`))
+    if command_exists "VBoxManage"; then
+      if [ `service vboxdrv status | grep "not loaded"` ]; then
+        VM="VirtualBox kernel module is not loaded"
+      else
+        VM=$(($VM+`VBoxManage list runningvms | wc -l`))
+      fi
     fi
-	fi
+  fi
 
   echo "$VM"
 }
