@@ -33,9 +33,7 @@ vm_count() {
       VM=$(($VM+`vmrun -T ws list | awk 'NR==1{print $4}'`))
     fi
     if command_exists "VBoxManage"; then
-      if [ `service vboxdrv status | grep "not loaded"` ]; then
-        VM="VirtualBox kernel module is not loaded"
-      else
+      if [[ ! `service vboxdrv status | grep "not loaded"` ]]; then
         VM=$(($VM+`VBoxManage list runningvms | wc -l`))
       fi
     fi
@@ -47,7 +45,7 @@ vm_count() {
 print_vm_status() {
 	# spacer fixes weird emoji spacing
 	local spacer=" "
-  if [ $(vm_count) -ne 0 ]; then
+  if [[ $(vm_count) -ne 0 ]]; then
     printf "$(get_tmux_option "$vm_option_string" "$(vm_icon_default)")$spacer$(vm_count)"
 	fi
 }
