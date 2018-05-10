@@ -66,6 +66,7 @@ You might also find these useful:
 
 - [wan-status](https://github.com/stonevil/tmux-wan-status) - WAN status and IP
 - [lan-status](https://github.com/stonevil/tmux-lan-status) - LAN status and IP
+- [docker-status](https://github.com/stonevil/tmux-docker-status) - Docker containers status
 
 ### License
 
